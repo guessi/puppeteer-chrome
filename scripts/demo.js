@@ -1,3 +1,5 @@
+'use strict';
+
 const homedir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
 const puppeteer = require('puppeteer');
 
