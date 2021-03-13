@@ -3,22 +3,38 @@
 const homedir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
 const puppeteer = require('puppeteer');
 
+const target = 'https://www.google.com';
+const options = {
+  headless: true,
+  args: [
+    '--disable-infobars',
+    '--disable-gpu',
+    '--no-default-browser-check',
+    '--hide-scrollbars',
+  ],
+  ignoreHTTPSErrors: true,
+};
+
+const viewport = {
+    width: 1024,
+    height: 768,
+};
+
 (async () => {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch(options);
   const page = await browser.newPage();
-  const navigationPromise = page.waitForNavigation();
 
   // set resolution
   console.log("[Debug] setup browser resolution")
-  await page.setViewport({ width: 800, height: 600 });
+  await page.setViewport(viewport);
 
   // wait for the page load
-  console.log("[Debug] launching https://www.google.com")
-  await page.goto('https://www.google.com', { waitUntil: ['networkidle0', 'domcontentloaded'] });
+  console.log("[Debug] launching " + target)
+  await page.goto(target, { waitUntil: ['networkidle0', 'domcontentloaded'] });
 
   // wait for page load
   console.log("[Debug] wait for page load")
-  await page.waitFor(3000);
+  await page.waitForTimeout(3000);
 
   console.log("[Debug] taking screenshot")
   await page.screenshot({ path: homedir + '/output/screenshot.png', fullPage: true });
