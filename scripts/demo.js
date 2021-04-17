@@ -1,18 +1,13 @@
 'use strict';
 
 const homedir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-extra');
+const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+puppeteer.use(StealthPlugin());
 
 const target = 'https://www.google.com';
 const options = {
   headless: true,
-  args: [
-    '--disable-infobars',
-    '--disable-gpu',
-    '--no-default-browser-check',
-    '--hide-scrollbars',
-  ],
-  ignoreHTTPSErrors: true,
 };
 
 const viewport = {

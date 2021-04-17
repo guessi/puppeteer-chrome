@@ -29,7 +29,7 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 # Install puppeteer so it's available in the container.
-RUN npm i puppeteer@${PUPPETEER_VERSION} \
+RUN npm i puppeteer@${PUPPETEER_VERSION} puppeteer-extra puppeteer-extra-plugin-stealth \
  # Add user so we don't need --no-sandbox.
  # same layer as npm install to keep re-chowned files from using up several hundred MBs more space
  && groupadd -r pptruser \
