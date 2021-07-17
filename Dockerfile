@@ -1,6 +1,6 @@
 FROM node:14-buster-slim
 
-ENV PUPPETEER_VERSION 10.0.0
+ENV PUPPETEER_VERSION 10.1.0
 
 # Install latest chrome dev package and fonts to support major charsets (Chinese, Japanese, Arabic, Hebrew, Thai and a few others)
 # Note: this installs the necessary libs to make the bundled version of Chromium that Puppeteer installs, work.
