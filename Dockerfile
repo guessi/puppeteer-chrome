@@ -1,6 +1,6 @@
-FROM node:14-buster-slim
+FROM node:16-bullseye-slim
 
-ENV PUPPETEER_VERSION 10.4.0
+ENV PUPPETEER_VERSION 11.0.0
 
 # Install latest chrome dev package and fonts to support major charsets (Chinese, Japanese, Arabic, Hebrew, Thai and a few others)
 # Note: this installs the necessary libs to make the bundled version of Chromium that Puppeteer installs, work.
@@ -28,15 +28,18 @@ RUN apt-get update \
       xvfb \
  && rm -rf /var/lib/apt/lists/*
 
-# Install puppeteer so it's available in the container.
-RUN npm i puppeteer@${PUPPETEER_VERSION} puppeteer-extra puppeteer-extra-plugin-stealth \
- # Add user so we don't need --no-sandbox.
- # same layer as npm install to keep re-chowned files from using up several hundred MBs more space
- && groupadd -r pptruser \
+# Add user so we don't need --no-sandbox.
+# Same layer as npm install to keep re-chowned files from using up several hundred MBs more space
+RUN groupadd -r pptruser \
  && useradd -r -g pptruser -G audio,video pptruser \
- && mkdir -p /home/pptruser/Downloads \
- && chown -R pptruser:pptruser /home/pptruser \
- && chown -R pptruser:pptruser /node_modules
+ && mkdir -p /home/pptruser \
+ && chown -R pptruser:pptruser /home/pptruser
 
 # Run everything after as non-privileged user.
 USER pptruser
+
+# Specify WORKDIR
+WORKDIR ["/home/pptruser"]
+
+# Install puppeteer so it's available in the container.
+RUN npm i puppeteer@${PUPPETEER_VERSION} puppeteer-extra puppeteer-extra-plugin-stealth
