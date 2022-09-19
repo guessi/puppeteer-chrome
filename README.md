@@ -1,10 +1,6 @@
 # Dockerized Puppeteer with Google Chrome
 
-[![Docker Stars](https://img.shields.io/docker/stars/guessi/puppeteer-chrome.svg)](https://hub.docker.com/r/guessi/puppeteer-chrome/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/guessi/puppeteer-chrome.svg)](https://hub.docker.com/r/guessi/puppeteer-chrome/)
-[![Docker Automated](https://img.shields.io/docker/automated/guessi/puppeteer-chrome.svg)](https://hub.docker.com/r/guessi/puppeteer-chrome/)
-
-most content are copy from [Puppeteer Docs](https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-puppeteer-in-docker)
+most content are copy from [Puppeteer Docs](https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-puppeteer-in-docker)
 
 ## Usage
 
