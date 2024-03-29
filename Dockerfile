@@ -2,7 +2,7 @@ FROM node:18-bullseye-slim
 
 # Please find the version information at link below:
 # - https://github.com/puppeteer/puppeteer/releases
-ENV PUPPETEER_VERSION 21.10.0
+ENV PUPPETEER_VERSION 22.6.2
 
 # Install latest chrome dev package and fonts to support major charsets (Chinese, Japanese, Arabic, Hebrew, Thai and a few others)
 # Note: this installs the necessary libs to make the bundled version of Chromium that Puppeteer installs, work.
