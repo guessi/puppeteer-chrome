@@ -1,4 +1,4 @@
-FROM public.ecr.aws/docker/library/node:20-bookworm-slim
+FROM public.ecr.aws/docker/library/node:22-bookworm-slim
 
 # Please find the version information at link below:
 # - https://github.com/puppeteer/puppeteer/releases
