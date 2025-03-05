@@ -2,7 +2,7 @@ FROM public.ecr.aws/docker/library/node:22-bookworm-slim
 
 # Please find the version information at link below:
 # - https://github.com/puppeteer/puppeteer/releases
-ENV PUPPETEER_VERSION 24.3.0
+ENV PUPPETEER_VERSION 24.3.1
 
 # Install latest chrome dev package and fonts to support major charsets (Chinese, Japanese, Arabic, Hebrew, Thai and a few others)
 # Note: this installs the necessary libs to make the bundled version of Chromium that Puppeteer installs, work.
