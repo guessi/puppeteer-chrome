@@ -1,15 +1,16 @@
-# Dockerized Puppeteer with Google Chrome
+# Containerized Puppeteer
 
-most content are copy from [Puppeteer Docs](https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-puppeteer-in-docker)
+## 🔢 Prerequisites
 
-## Usage
+* Container runtime
+* Google Chrome
+
+## 🚀 Quick start
 
 run the demo scripts
 
-    $ ./run.sh
-
-run script with environments
-
-    $ vim env_file
-    $ edit ./scripts/demo.js
-    $ ./run.sh
+```bash
+edit env_file # optional
+edit ./scripts/demo.js # optional
+./run.sh
+```

@@ -1,5 +1,8 @@
 FROM public.ecr.aws/docker/library/node:22-bookworm-slim
 
+# dependencies are defined at link below, with slightly customization
+# - https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-puppeteer-in-docker
+
 # Please find the version information at link below:
 # - https://github.com/puppeteer/puppeteer/releases
 ENV PUPPETEER_VERSION 24.3.1
