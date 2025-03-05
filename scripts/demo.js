@@ -5,7 +5,7 @@ const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 puppeteer.use(StealthPlugin());
 
-const target = 'https://www.google.com';
+const target = 'https://pptr.dev/';
 const options = {
   headless: true,
 };
